@@ -58,8 +58,7 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
     
     func PulirM3u8() {
         
-        // Buena http://91.121.64.179/tdt_project/output/channels.m3u8
-        // https://raw.githubusercontent.com/vk496/IPTVspain/master/spain.m3u8
+       
         if let url = URL(string: UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada") {
             do {
                 contents = try String(contentsOf: url)

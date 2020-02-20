@@ -47,7 +47,6 @@
 		46709DBA22902FCE0067D331 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		46709DBC22902FD00067D331 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46709DC122902FD00067D331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46709DC222902FD00067D331 /* IPTV_MacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IPTV_MacOS.entitlements; sourceTree = "<group>"; };
 		46709DC722902FD00067D331 /* IPTV MacOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "IPTV MacOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46709DCB22902FD00067D331 /* IPTV_MacOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPTV_MacOSTests.swift; sourceTree = "<group>"; };
 		46709DCD22902FD00067D331 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -119,7 +118,6 @@
 				46709DBC22902FD00067D331 /* Assets.xcassets */,
 				4610E19423FC64EA001AF690 /* Main.storyboard */,
 				46709DC122902FD00067D331 /* Info.plist */,
-				46709DC222902FD00067D331 /* IPTV_MacOS.entitlements */,
 				46709DE52290FBC90067D331 /* Person.swift */,
 				46C4779B22A46401007309F8 /* Grupos.swift */,
 				46709DE922919CE90067D331 /* PantallaControllerView.swift */,

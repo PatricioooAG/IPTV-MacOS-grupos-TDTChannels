@@ -34,8 +34,7 @@ class M3U8Grupos: NSObject {
     var index = 0
     func PulirM3u8Grupos() {
         
-        // Buena http://91.121.64.179/tdt_project/output/channels.m3u8
-        // https://raw.githubusercontent.com/vk496/IPTVspain/master/spain.m3u8
+      
         if let url2 = URL(string: UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada") {
             do {
                 contents2 = try String(contentsOf: url2)
