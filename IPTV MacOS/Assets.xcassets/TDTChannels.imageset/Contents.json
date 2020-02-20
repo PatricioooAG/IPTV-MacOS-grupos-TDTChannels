@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "TDTChannels.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "TDTChannels.png",
       "scale" : "2x"
     },
     {
