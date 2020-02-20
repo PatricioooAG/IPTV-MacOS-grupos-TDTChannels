@@ -725,7 +725,7 @@
                                             <tableColumns>
                                                 <tableColumn identifier="Logo" width="133" minWidth="10" maxWidth="3.4028234663852886e+38" id="Jch-nF-Soz">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="center">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </tableHeaderCell>
@@ -774,7 +774,7 @@
                                                 </tableColumn>
                                                 <tableColumn identifier="Cadena" width="361" minWidth="40" maxWidth="1000" id="vkJ-MO-vDL">
                                                     <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="menu" size="11"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                     </tableHeaderCell>
@@ -902,15 +902,40 @@
                                     <action selector="BtnAtras:" target="XfG-lQ-9wD" id="U2N-2u-E7M"/>
                                 </connections>
                             </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="sAe-3L-fJO">
+                                <rect key="frame" x="321" y="475" width="175" height="32"/>
+                                <buttonCell key="cell" type="push" title="Licencia TDTChannels" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="JSx-GF-doq">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="Licencia:" target="XfG-lQ-9wD" id="UtW-Wd-qRd"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fWt-Al-Y8I">
+                                <rect key="frame" x="508" y="5" width="161" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="149" id="rJx-xa-3S6"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Cargar TDTChannels" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="7ji-N5-Xyo">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="TDTChannels:" target="XfG-lQ-9wD" id="ZGa-ph-Gi6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="akF-5H-vFH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="00V-Ia-bEH"/>
                             <constraint firstItem="2eG-aY-MG6" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="67" id="0Im-T1-iEc"/>
                             <constraint firstItem="2eG-aY-MG6" firstAttribute="leading" secondItem="akF-5H-vFH" secondAttribute="trailing" constant="64" id="3VP-TG-zq4"/>
                             <constraint firstItem="Qlf-CG-gdW" firstAttribute="centerX" secondItem="utp-qa-WUc" secondAttribute="centerX" id="6WF-aS-uEz"/>
+                            <constraint firstItem="fWt-Al-Y8I" firstAttribute="baseline" secondItem="UYE-DP-8o2" secondAttribute="baseline" id="6oG-FU-xxa"/>
                             <constraint firstItem="LlC-FB-6At" firstAttribute="leading" secondItem="akF-5H-vFH" secondAttribute="trailing" constant="12" id="7Bx-SI-RRg"/>
                             <constraint firstItem="2de-FS-qe3" firstAttribute="leading" secondItem="77b-az-qYx" secondAttribute="leading" id="9Xz-gt-xgq"/>
                             <constraint firstItem="o4d-MS-bjQ" firstAttribute="leading" secondItem="Qlf-CG-gdW" secondAttribute="leading" id="CXy-qO-61R"/>
+                            <constraint firstItem="fWt-Al-Y8I" firstAttribute="leading" secondItem="LlC-FB-6At" secondAttribute="leading" id="Hsd-Pk-E9x"/>
                             <constraint firstItem="utp-qa-WUc" firstAttribute="trailing" secondItem="UYE-DP-8o2" secondAttribute="trailing" id="IdL-id-R7r"/>
                             <constraint firstItem="2eG-aY-MG6" firstAttribute="centerX" secondItem="Qlf-CG-gdW" secondAttribute="centerX" id="Ld8-BM-bI5"/>
                             <constraint firstItem="Qlf-CG-gdW" firstAttribute="top" secondItem="2eG-aY-MG6" secondAttribute="bottom" constant="2" id="U66-vP-Wyg"/>
@@ -923,11 +948,13 @@
                             <constraint firstItem="UYE-DP-8o2" firstAttribute="top" secondItem="utp-qa-WUc" secondAttribute="bottom" constant="8" symbolic="YES" id="dyd-LN-wOw"/>
                             <constraint firstItem="TZg-5b-whC" firstAttribute="leading" secondItem="akF-5H-vFH" secondAttribute="trailing" constant="11" id="ha7-7I-Zmg"/>
                             <constraint firstItem="77b-az-qYx" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" symbolic="YES" id="ikQ-Yj-6Yb"/>
+                            <constraint firstItem="sAe-3L-fJO" firstAttribute="baseline" secondItem="o4d-MS-bjQ" secondAttribute="baseline" id="jGQ-Ga-RGj"/>
                             <constraint firstItem="77b-az-qYx" firstAttribute="top" secondItem="UYE-DP-8o2" secondAttribute="top" id="kXF-1q-hYX"/>
                             <constraint firstItem="Qlf-CG-gdW" firstAttribute="leading" secondItem="akF-5H-vFH" secondAttribute="trailing" constant="8" symbolic="YES" id="kmz-GL-ms9"/>
                             <constraint firstItem="2de-FS-qe3" firstAttribute="baseline" secondItem="o4d-MS-bjQ" secondAttribute="baseline" id="r5a-Tk-bM7"/>
                             <constraint firstItem="TZg-5b-whC" firstAttribute="top" secondItem="LlC-FB-6At" secondAttribute="bottom" constant="8" symbolic="YES" id="rNp-69-tUq"/>
                             <constraint firstItem="77b-az-qYx" firstAttribute="top" secondItem="akF-5H-vFH" secondAttribute="bottom" constant="8" symbolic="YES" id="rlX-X7-F2Z"/>
+                            <constraint firstItem="o4d-MS-bjQ" firstAttribute="leading" secondItem="sAe-3L-fJO" secondAttribute="trailing" constant="20" id="vSx-08-nbJ"/>
                             <constraint firstAttribute="bottom" secondItem="UYE-DP-8o2" secondAttribute="bottom" constant="12" id="yWM-pq-7HG"/>
                         </constraints>
                     </view>
@@ -977,7 +1004,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HfT-HD-F7O">
-                                <rect key="frame" x="114" y="20" width="453" height="96"/>
+                                <rect key="frame" x="114" y="19" width="453" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VVz-qZ-ESK">
