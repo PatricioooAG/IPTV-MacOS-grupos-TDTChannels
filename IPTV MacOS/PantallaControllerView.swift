@@ -24,9 +24,9 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
    
     var timer:Timer? = Timer()
     var currentValue = Float(0)
-    var people: [Person] = []
+   // var people: [Person] = []
     var vuelta = "off"
-    var TotalArrayLocal = 0
+    var TotalArrayLocal = GlobalVariables.sharedManager.TotalArray
     private var trackingArea: NSTrackingArea?
 
     @IBOutlet weak var volumeControl: NSSlider!
@@ -49,13 +49,13 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
     var UrlEmisora = ""
     var Gruposarr = ""
 
-    var index = 0
+ //   var index = 0
     
     var urlLocal = GlobalVariables.sharedManager.indexTView
 
     
-    
-    
+    var PulirUrl = M3U8()
+/*
     func PulirM3u8() {
         
        
@@ -125,10 +125,10 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
             // the URL was bad!
         }
     }
-
+*/
     override func viewDidLoad() {
         super.viewDidLoad()
-PulirM3u8()
+      
         Reproducir()
        ViewControles.wantsLayer = true
         view.layer?.backgroundColor = NSColor.black.cgColor
@@ -167,7 +167,6 @@ PulirM3u8()
             
            
 
-            
         
         let urlLogo = URL(string: people[urlLocal].Logo)!
 
@@ -262,8 +261,12 @@ PulirM3u8()
  */
     override func viewDidAppear() {
         super.viewDidAppear()
+       // people.removeAll()
+
+          //  PulirUrl.PulirM3u8()
         player.volume = volumeControl.floatValue
         currentValue = volumeControl.floatValue
+        TotalArrayLocal = TotalArrayLocal - 1
         view.window?.delegate = self
         NSAnimationContext.runAnimationGroup({ (context) -> Void in
             context.duration = 1.5
@@ -335,7 +338,7 @@ PulirM3u8()
     }
     
     @IBAction func BtnAtras(_ sender: Any) {
-        _ = people[urlLocal]
+    //    _ = people[urlLocal]
 
 
         if let aTimer2 = timerMenu2 {
@@ -345,9 +348,13 @@ PulirM3u8()
      //   print(person)
         
   //      GlobalVariables.sharedManager.TotalArray
-        
+      
         if urlLocal == 0 {
 urlLocal = TotalArrayLocal
+            print("-------------")
+            print(urlLocal)
+
+            print(TotalArrayLocal)
             vuelta = "on"
         }
         if vuelta == "on" {
@@ -396,8 +403,8 @@ urlLocal = TotalArrayLocal
        }
     
     @IBAction func BtnAdelante(_ sender: Any) {
-        
-        _ = people[urlLocal]
+       
+      //  _ = people[urlLocal]
         
         
         if let aTimer = timerMenu2 {
@@ -405,10 +412,13 @@ urlLocal = TotalArrayLocal
             timerMenu2 = nil
         }
         //   print(person)
-        
+     //   TotalArrayLocal = TotalArrayLocal - 1
         //      GlobalVariables.sharedManager.TotalArray
         if urlLocal == TotalArrayLocal {
+            print("-------bbb------")
+            print(urlLocal)
 
+            print(TotalArrayLocal)
             urlLocal = 0
             vuelta = "on"
         }
@@ -417,6 +427,10 @@ urlLocal = TotalArrayLocal
 
         } else {
         urlLocal = urlLocal + 1
+            print("-------ccc------")
+                       print(urlLocal)
+
+                       print(TotalArrayLocal)
         }
             
        
@@ -513,6 +527,10 @@ urlLocal = TotalArrayLocal
     func windowWillClose(_ notification: Notification) {
         print("willClose")
         player.replaceCurrentItem(with: nil)
+
+                TotalArrayLocal = 0
+
+
         if let aTimer = timer {
             aTimer.invalidate()
             timer = nil
