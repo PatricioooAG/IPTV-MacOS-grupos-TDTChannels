@@ -47,7 +47,7 @@ class ViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       //  _ = M3U8().PulirM3u8()
-        _ = M3U8Grupos().PulirM3u8Grupos()
+        M3U8Grupos().PulirM3u8Grupos()
         GlobalVariables.sharedManager.GrupoCadenas = "Grupos"
         self.view.window?.minSize = NSSize(width: 775, height: 533)
         BtnAtras.isEnabled = false
@@ -70,7 +70,7 @@ class ViewController: NSViewController {
           //  GlobalVariables.sharedManager.GrupoCadenas = "Cadenas"
             GlobalVariables.sharedManager.GrupoCadenas = "Cadenas"
             GlobalVariables.sharedManager.indexTView = selectedTableView.selectedRow
-            _ = M3U8().PulirM3u8()
+            M3U8().PulirM3u8()
             ArrayTableView.reloadData()
             BtnAtras.isEnabled = true
 
@@ -165,8 +165,8 @@ class ViewController: NSViewController {
     @IBAction func TDTChannels(_ sender: Any) {
                GruposArray.removeAll()
         AbrirPantalla.isEnabled = false
-        UserDefaults.standard.set("http://www.tdtchannels.com/lists/channels.m3u", forKey: "Url")
-        _ = M3U8Grupos().PulirM3u8Grupos()
+        UserDefaults.standard.set("http://www.tdtchannels.com/lists/tv.m3u", forKey: "Url")
+        M3U8Grupos().PulirM3u8Grupos()
 
                ArrayTableView.reloadData()
         
@@ -183,7 +183,7 @@ class ViewController: NSViewController {
         GruposArray.removeAll()
         UserDefaults.standard.set(TxtLista.stringValue, forKey: "Url")
         LblLista.stringValue = UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada"
-        _ = M3U8Grupos().PulirM3u8Grupos()
+        M3U8Grupos().PulirM3u8Grupos()
 
         ArrayTableView.reloadData()
         TxtLista.stringValue = ""

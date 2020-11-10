@@ -38,10 +38,10 @@ class M3U8: NSObject {
     var index = 0
     func PulirM3u8() {
         
-GlobalVariables.sharedManager.TotalArray =  0
-        if let url = URL(string: UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada") {
+        // Buena http://91.121.64.179/tdt_project/output/channels.m3u8
+        // https://raw.githubusercontent.com/vk496/IPTVspain/master/spain.m3u8
+       if let url = URL(string: UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada") {
             do {
-
                 contents = try String(contentsOf: url)
                 //    print(contents)
                 //  let str = "sunday, monday, happy days"
@@ -54,8 +54,6 @@ GlobalVariables.sharedManager.TotalArray =  0
                 for _ in arr {
                      if index != 0 {
                         
-                        
-                      
                     
                         if arr[index].contains(find: "group-title") {
                             Gruposarr = arr[index].slice(from: "group-title=\"", to: "\"")!
@@ -87,14 +85,13 @@ GlobalVariables.sharedManager.TotalArray =  0
                          //   index = index + 1
                         let person1 = Person.init(idEPG: IDEPG, Logo: UrlLogo, Cadena: NombreEmisora, UrlCadena: UrlEmisora, GruposCad: Gruposarr)
                         people.append(person1)
-                              GlobalVariables.sharedManager.TotalArray =    GlobalVariables.sharedManager.TotalArray + 1
-                            print("qqq")
-                            print(GlobalVariables.sharedManager.TotalArray)
                         }
                         index = index + 1
-                                     //   print(people)
+                        
+                        //   print(people)
                         //   print("-------------------------")
                     }else{
+                        
                         index = index + 1
                         
                     }

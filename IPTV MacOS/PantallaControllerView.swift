@@ -24,9 +24,9 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
    
     var timer:Timer? = Timer()
     var currentValue = Float(0)
-   // var people: [Person] = []
+    var people: [Person] = []
     var vuelta = "off"
-    var TotalArrayLocal = GlobalVariables.sharedManager.TotalArray
+    var TotalArrayLocal = 0
     private var trackingArea: NSTrackingArea?
 
     @IBOutlet weak var volumeControl: NSSlider!
@@ -49,16 +49,17 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
     var UrlEmisora = ""
     var Gruposarr = ""
 
- //   var index = 0
+    var index = 0
     
     var urlLocal = GlobalVariables.sharedManager.indexTView
 
     
-    var PulirUrl = M3U8()
-/*
+    
+    
     func PulirM3u8() {
         
-       
+        // Buena http://91.121.64.179/tdt_project/output/channels.m3u8
+        // https://raw.githubusercontent.com/vk496/IPTVspain/master/spain.m3u8
         if let url = URL(string: UserDefaults.standard.string(forKey: "Url") ?? "Sin lista cargada") {
             do {
                 contents = try String(contentsOf: url)
@@ -125,10 +126,10 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
             // the URL was bad!
         }
     }
-*/
+
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+PulirM3u8()
         Reproducir()
        ViewControles.wantsLayer = true
         view.layer?.backgroundColor = NSColor.black.cgColor
@@ -167,6 +168,7 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
             
            
 
+            
         
         let urlLogo = URL(string: people[urlLocal].Logo)!
 
@@ -261,12 +263,8 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
  */
     override func viewDidAppear() {
         super.viewDidAppear()
-       // people.removeAll()
-
-          //  PulirUrl.PulirM3u8()
         player.volume = volumeControl.floatValue
         currentValue = volumeControl.floatValue
-        TotalArrayLocal = TotalArrayLocal - 1
         view.window?.delegate = self
         NSAnimationContext.runAnimationGroup({ (context) -> Void in
             context.duration = 1.5
@@ -338,7 +336,7 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
     }
     
     @IBAction func BtnAtras(_ sender: Any) {
-    //    _ = people[urlLocal]
+        _ = people[urlLocal]
 
 
         if let aTimer2 = timerMenu2 {
@@ -348,13 +346,9 @@ class PantallaControllerView: NSViewController, NSWindowDelegate {
      //   print(person)
         
   //      GlobalVariables.sharedManager.TotalArray
-      
+        
         if urlLocal == 0 {
 urlLocal = TotalArrayLocal
-            print("-------------")
-            print(urlLocal)
-
-            print(TotalArrayLocal)
             vuelta = "on"
         }
         if vuelta == "on" {
@@ -403,8 +397,8 @@ urlLocal = TotalArrayLocal
        }
     
     @IBAction func BtnAdelante(_ sender: Any) {
-       
-      //  _ = people[urlLocal]
+        
+        _ = people[urlLocal]
         
         
         if let aTimer = timerMenu2 {
@@ -412,13 +406,10 @@ urlLocal = TotalArrayLocal
             timerMenu2 = nil
         }
         //   print(person)
-     //   TotalArrayLocal = TotalArrayLocal - 1
+        
         //      GlobalVariables.sharedManager.TotalArray
         if urlLocal == TotalArrayLocal {
-            print("-------bbb------")
-            print(urlLocal)
 
-            print(TotalArrayLocal)
             urlLocal = 0
             vuelta = "on"
         }
@@ -427,10 +418,6 @@ urlLocal = TotalArrayLocal
 
         } else {
         urlLocal = urlLocal + 1
-            print("-------ccc------")
-                       print(urlLocal)
-
-                       print(TotalArrayLocal)
         }
             
        
@@ -527,10 +514,6 @@ urlLocal = TotalArrayLocal
     func windowWillClose(_ notification: Notification) {
         print("willClose")
         player.replaceCurrentItem(with: nil)
-
-                TotalArrayLocal = 0
-
-
         if let aTimer = timer {
             aTimer.invalidate()
             timer = nil
